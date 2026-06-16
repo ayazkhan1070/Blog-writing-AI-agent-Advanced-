@@ -1,0 +1,12 @@
+.env
+__pycache__/
+myenv/
+.venv/
+.ipynb_checkpoints/
+*.json
+*.md
+!README.md
+images/
+*.zip
+users/
+logs/
