@@ -31,6 +31,21 @@ This project features a secure OTP-based user registration and admin approval wo
 
 ---
 
+## 📐 Architecture
+
+```mermaid
+graph TD
+    User[Streamlit Frontend] -->|1. Request OTP & Authenticate| Auth[SMTP OTP Service]
+    User -->|2. Provide Topic / Input| Orchestrator[LangGraph Agent Orchestrator]
+    Orchestrator -->|3. Search Query| Tavily[Tavily Search API]
+    Orchestrator -->|4. Generate Content| LLM[LLM: Gemini / Nemotron]
+    Orchestrator -->|5. Insert Images| ImageAgent[Image Placement Agent]
+    Orchestrator -->|6. Return Blog Post| User
+    User -->|7. Rating & Feedback| DB[(JSON User DB & Central Log)]
+```
+
+---
+
 ## ⚙️ Project Structure
 
 ```
