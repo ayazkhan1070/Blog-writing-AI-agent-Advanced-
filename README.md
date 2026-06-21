@@ -38,7 +38,7 @@ graph TD
     User[Streamlit Frontend] -->|1. Request OTP & Authenticate| Auth[SMTP OTP Service]
     User -->|2. Provide Topic / Input| Orchestrator[LangGraph Agent Orchestrator]
     Orchestrator -->|3. Search Query| Tavily[Tavily Search API]
-    Orchestrator -->|4. Generate Content| LLM[LLM: Gemini / Nemotron]
+    Orchestrator -->|4. Generate Content| LLM[LLM: OpenAI (GPT-4o)]
     Orchestrator -->|5. Insert Images| ImageAgent[Image Placement Agent]
     Orchestrator -->|6. Return Blog Post| User
     User -->|7. Rating & Feedback| DB[(JSON User DB & Central Log)]
@@ -50,8 +50,7 @@ graph TD
 
 ```
 ├── frontend.py           # Streamlit UI & authentication logic
-├── backend.py            # LangGraph agent orchestration & LLM pipeline
-├── backend2.py           # Alternate/backup backend workflow
+├── backend2.py           # Core LangGraph agent orchestration & LLM pipeline (OpenAI GPT-4o)
 ├── requirements.txt      # Python dependencies
 ├── Dockerfile            # Container build specification
 ├── docker-compose.yml    # Multi-container service configuration
