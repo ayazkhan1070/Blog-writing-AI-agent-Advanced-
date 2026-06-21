@@ -38,7 +38,7 @@ graph TD
     User[Streamlit Frontend] -->|1. Request OTP & Authenticate| Auth[SMTP OTP Service]
     User -->|2. Provide Topic / Input| Orchestrator[LangGraph Agent Orchestrator]
     Orchestrator -->|3. Search Query| Tavily[Tavily Search API]
-    Orchestrator -->|4. Generate Content| LLM[LLM: OpenAI (GPT-4o)]
+    Orchestrator -->|4. Generate Content| LLM["LLM: OpenAI (GPT-4o)"]
     Orchestrator -->|5. Insert Images| ImageAgent[Image Placement Agent]
     Orchestrator -->|6. Return Blog Post| User
     User -->|7. Rating & Feedback| DB[(JSON User DB & Central Log)]
